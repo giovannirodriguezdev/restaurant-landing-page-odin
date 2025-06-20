@@ -1,0 +1,121 @@
+body {
+  font-family: "Arial", sans-serif; /* A more common sans-serif font */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* Lighter background */
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background-color: #333; /* Dark background for the navbar */
+  padding: 15px 0; /* More padding top/bottom */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Navigation bar container */
+nav {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: center; /* Align items vertically in the middle */
+  max-width: 960px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center the nav itself */
+}
+
+/* Navigation buttons styling */
+nav button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 12px 25px; /* Adjust padding for button size */
+  margin: 0 10px; /* Space between buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em; /* Slightly larger font */
+  font-weight: bold; /* Make text bolder */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for subtle animation */
+  min-width: 100px; /* Give buttons a minimum width */
+}
+
+/* Hover effect for buttons */
+nav button:hover {
+  background-color: #777;
+  transform: translateY(-2px); /* Lift button slightly on hover */
+}
+
+/* Active button styling (optional, but good for UX) */
+/* You would add a class to the active button via JavaScript */
+nav button.active {
+  background-color: #4caf50; /* A distinct color for the active tab */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Subtle glow for active */
+  transform: translateY(0); /* Reset transform if hovered while active */
+}
+
+/* Content area styling */
+#content {
+  max-width: 800px;
+  margin: 30px auto; /* More margin from the header */
+  padding: 30px; /* More internal padding */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  text-align: center;
+}
+
+/* Existing styles for content elements (headlines, images, menu items) */
+#content h1 {
+  color: #4caf50;
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Larger headline */
+}
+
+.restaurant-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block; /* Ensures image takes full width and no extra space below */
+  margin-left: auto; /* Center image */
+  margin-right: auto; /* Center image */
+}
+
+.home-description,
+.contact-info {
+  line-height: 1.7; /* Better readability */
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.menu-item {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  text-align: left;
+  display: flex; /* Use flexbox for menu items */
+  justify-content: space-between; /* Space out name/desc and price */
+  align-items: flex-start; /* Align text at top */
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item h2 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.4em;
+}
+
+.menu-item p {
+  flex-grow: 1; /* Allow description to take available space */
+  margin-right: 20px; /* Space before price */
+  font-size: 0.95em;
+  color: #666;
+}
+
+.menu-price {
+  font-weight: bold;
+  color: #4caf50;
+  font-size: 1.2em;
+  flex-shrink: 0; /* Prevent price from shrinking */
+}
