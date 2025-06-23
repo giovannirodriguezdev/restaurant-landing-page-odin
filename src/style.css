@@ -1,5 +1,5 @@
 body {
-  font-family: "Arial", sans-serif; /* A more common sans-serif font */
+  font-family: "Oswald", sans-serif; /* A more common sans-serif font */
   margin: 0;
   padding: 0;
   background-color: #f8f8f8; /* Lighter background */
@@ -8,18 +8,22 @@ body {
 
 /* Header styling */
 header {
-  background-color: #333; /* Dark background for the navbar */
-  padding: 15px 0; /* More padding top/bottom */
+  background-color: #fefae8;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Navigation bar container */
 nav {
   display: flex; /* Use flexbox for horizontal layout */
-  justify-content: center; /* Center the buttons horizontally */
+  justify-content: space-between;
   align-items: center; /* Align items vertically in the middle */
   max-width: 960px; /* Limit width for larger screens */
   margin: 0 auto; /* Center the nav itself */
+  padding: 0 20px;
+}
+
+.logo {
+  width: 100px;
 }
 
 /* Navigation buttons styling */
@@ -46,37 +50,46 @@ nav button:hover {
 /* Active button styling (optional, but good for UX) */
 /* You would add a class to the active button via JavaScript */
 nav button.active {
-  background-color: #4caf50; /* A distinct color for the active tab */
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Subtle glow for active */
+  background-color: #ff616e; /* A distinct color for the active tab */
+  box-shadow: 0 0 8px rgba(175, 99, 76, 0.5); /* Subtle glow for active */
   transform: translateY(0); /* Reset transform if hovered while active */
 }
 
 /* Content area styling */
 #content {
-  max-width: 800px;
-  margin: 30px auto; /* More margin from the header */
-  padding: 30px; /* More internal padding */
-  background-color: white;
+  padding: 30px;
+  background-color: #fefae8;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow */
   text-align: center;
 }
 
 /* Existing styles for content elements (headlines, images, menu items) */
-#content h1 {
-  color: #4caf50;
-  margin-bottom: 20px;
-  font-size: 2.5em; /* Larger headline */
+
+.hero-section {
+  background-color: #fefae8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .restaurant-image {
-  max-width: 100%;
-  height: auto;
+  width: 500px;
   border-radius: 8px;
   margin-bottom: 20px;
-  display: block; /* Ensures image takes full width and no extra space below */
+  display: block;
   margin-left: auto; /* Center image */
   margin-right: auto; /* Center image */
+}
+
+.hero-headline {
+  color: #ff616e;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  transform: skew(-18deg);
+  margin-top: -30px;
 }
 
 .home-description,
@@ -115,7 +128,97 @@ nav button.active {
 
 .menu-price {
   font-weight: bold;
-  color: #4caf50;
+  color: #ff616e;
   font-size: 1.2em;
   flex-shrink: 0; /* Prevent price from shrinking */
+}
+
+.recipe-h1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 3em;
+  color: #ff616e;
+}
+
+/* --- Recipe Sections Styling --- */
+.recipe-sections-container {
+  display: flex; /* Changed from grid to flex */
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: center; /* Centers the cards horizontally when there's extra space */
+  gap: 30px; /* Space between recipe cards (modern way to handle gaps in flexbox) */
+  max-width: 1200px; /* Adjust as needed */
+  margin: auto; /* Center and add margin */
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+
+.recipe-card {
+  background-color: #fefae8;
+  border-radius: 12px; /* More rounded corners for cards */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  overflow: hidden; /* Ensures image respects border-radius */
+  text-align: center; /* Center content within the card */
+  display: flex; /* Keep as flex to arrange content vertically within each card */
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+
+  /* Flex item properties for responsiveness */
+  flex-basis: 300px; /* Optimal base width for each card */
+  flex-grow: 1; /* Allows cards to grow to fill available space */
+  max-width: calc(
+    33.33% - 20px
+  ); /* Adjust for 3 columns on larger screens, accounting for gap */
+  min-width: 280px; /* Ensure cards don't get too small */
+}
+
+/* Adjust max-width for different screen sizes if desired, using media queries */
+@media (max-width: 992px) {
+  .recipe-card {
+    max-width: calc(50% - 20px); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-card {
+    max-width: calc(100% - 20px); /* 1 column on small screens */
+  }
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.recipe-card-image {
+  width: auto;
+  height: 200px; /* Fixed height for consistent card appearance */
+  object-fit: cover; /* Crop image to fit the container */
+  border-bottom: 1px solid #eee;
+}
+
+.recipe-card-title {
+  font-size: 1.6em;
+  color: #333;
+  padding: 15px 20px 10px;
+  margin: 0;
+  flex-grow: 1; /* Allows title to take up space, pushing button down */
+}
+
+.view-recipe-button {
+  background-color: #ff616e; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 0 20px 20px 20px; /* Margin around the button */
+  align-self: center; /* Center the button horizontally in the flex container */
+  width: calc(100% - 30px); /* Make button fill most of the width */
+  max-width: 200px; /* Limit button width */
+}
+
+.view-recipe-button:hover {
+  background-color: #777; /* Darker green on hover */
 }
